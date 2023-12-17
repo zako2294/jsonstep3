@@ -14,7 +14,7 @@
         }
 
         header {
-            background-color: #ffcc00; /* Yellow */
+            background-color: #ffcc00;
             color: #fff;
             text-align: center;
             padding: 1em 0;
@@ -40,12 +40,12 @@
             padding: 8px;
             margin-bottom: 16px;
             box-sizing: border-box;
-            border: 1px solid #ffcc00; /* Yellow */
+            border: 1px solid #ffcc00;
             border-radius: 4px;
         }
 
         button {
-            background-color: #cc0000; /* Red */
+            background-color: #cc0000;
             color: #fff;
             padding: 10px 15px;
             border: none;
@@ -54,14 +54,12 @@
         }
 
         button:hover {
-            background-color: #990000; /* Darker red on hover */
+            background-color: #990000;
         }
     </style>
 
     <script>
-        // Function to save data to LocalStorage and reset the form
         function saveDataAndResetForm() {
-            // Get form data
             var formData = {
                 date: document.getElementById('date').value,
                 startTime: document.getElementById('startTime').value,
@@ -73,16 +71,9 @@
                 scenicViews: document.getElementById('scenicViews').value
             };
 
-            // Retrieve existing data from LocalStorage
             var savedData = JSON.parse(localStorage.getItem('drivingData')) || [];
-
-            // Add current form data to the existing data
             savedData.push(formData);
-
-            // Save the updated data back to LocalStorage
             localStorage.setItem('drivingData', JSON.stringify(savedData));
-
-            // Reset the form
             document.getElementById('drivingForm').reset();
         }
     </script>
@@ -139,7 +130,6 @@
             <option value="Cityscape">Cityscape</option>
         </select>
 
-        <!-- Use type="button" to prevent accidental form submission -->
         <button type="button" onclick="saveDataAndResetForm()">Submit</button>
     </form>
 </body>
